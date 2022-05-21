@@ -38,6 +38,7 @@ const Input = styled.input`
     flex: 8;
     font-family: 'Urbanist', sans-serif;
     font-weight: 500;
+    outline: none;
 
     &::placeholder {
         font-family: 'Urbanist', sans-serif;

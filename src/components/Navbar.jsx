@@ -1,7 +1,7 @@
-import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
-import React from "react";
-import styled from "styled-components";
+import { Badge } from '@material-ui/core';
+import { Search, ShoppingCartOutlined } from '@material-ui/icons';
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
     height: 60px;
@@ -35,6 +35,8 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
     border: none;
+
+    outline: none;
 `;
 
 const Center = styled.div`
@@ -70,8 +72,8 @@ export default function Navbar() {
                         <Input />
                         <Search
                             style={{
-                                color: "grey",
-                                fontSize: "1rem",
+                                color: 'grey',
+                                fontSize: '1rem',
                             }}
                         />
                     </SearchContainer>
@@ -83,8 +85,8 @@ export default function Navbar() {
                     <MenuItem>REGISTER</MenuItem>
                     <MenuItem>SIGN IN</MenuItem>
                     <MenuItem>
-                        <Badge badgeContent={4} color="primary">
-                            <ShoppingCartOutlined color="action" />
+                        <Badge badgeContent={4} color='primary'>
+                            <ShoppingCartOutlined color='action' />
                         </Badge>
                     </MenuItem>
                 </Right>

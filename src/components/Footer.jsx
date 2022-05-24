@@ -21,7 +21,9 @@ const Left = styled.div`
     padding: 1.25rem;
 `;
 
-const Logo = styled.h1``;
+const Logo = styled.h1`
+    letter-spacing: 4px;
+`;
 
 const Desc = styled.p`
     margin: 1.3rem 0;
@@ -49,6 +51,7 @@ const Center = styled.div`
 `;
 
 const Title = styled.h3`
+    letter-spacing: 1.5px;
     margin: 1.85rem 0 3.09rem;
 `;
 

@@ -37,6 +37,8 @@ const Button = styled.button`
     transition: all 0.5s ease;
     font-weight: 600;
 
+    letter-spacing: 2px;
+
     &:hover {
         background-color: white;
     }

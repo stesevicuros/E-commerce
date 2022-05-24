@@ -1,7 +1,7 @@
-import { ArrowLeft, ArrowRight } from "@material-ui/icons";
-import React, { useState } from "react";
-import styled from "styled-components";
-import { sliderItems } from "../data";
+import { ArrowLeft, ArrowRight } from '@material-ui/icons';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { sliderItems } from '../data';
 
 const Container = styled.div`
     width: 100%;
@@ -22,8 +22,8 @@ const Arrow = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: ${(props) => props.direction === "left" && "0.8rem"};
-    right: ${(props) => props.direction === "right" && "0.8rem"};
+    left: ${(props) => props.direction === 'left' && '0.8rem'};
+    right: ${(props) => props.direction === 'right' && '0.8rem'};
     margin: auto;
     cursor: pointer;
     opacity: 0.6;
@@ -77,13 +77,14 @@ const Button = styled.button`
     font-size: 20px;
     background-color: transparent;
     cursor: pointer;
+    letter-spacing: 2px;
 `;
 
 export default function Slider() {
     const [slideIndex, setSlideIndex] = useState(0);
 
     const handleClick = (direction) => {
-        if (direction === "left") {
+        if (direction === 'left') {
             setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
         } else {
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
@@ -92,7 +93,7 @@ export default function Slider() {
 
     return (
         <Container>
-            <Arrow direction="left" onClick={() => handleClick("left")}>
+            <Arrow direction='left' onClick={() => handleClick('left')}>
                 <ArrowLeft />
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
@@ -109,7 +110,7 @@ export default function Slider() {
                     </Slide>
                 ))}
             </Wrapper>
-            <Arrow direction="right" onClick={() => handleClick("right")}>
+            <Arrow direction='right' onClick={() => handleClick('right')}>
                 <ArrowRight />
             </Arrow>
         </Container>

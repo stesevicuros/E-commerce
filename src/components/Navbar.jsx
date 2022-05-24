@@ -23,6 +23,7 @@ const Left = styled.div`
 const Language = styled.span`
     font-size: 0.9rem;
     cursor: pointer;
+    letter-spacing: 1.5px;
 `;
 
 const SearchContainer = styled.div`
@@ -35,13 +36,13 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
     border: none;
-
     outline: none;
 `;
 
 const Center = styled.div`
     flex: 1;
     text-align: center;
+    letter-spacing: 5px;
 `;
 
 const Logo = styled.h1`
@@ -82,8 +83,12 @@ export default function Navbar() {
                     <Logo>LAMA.</Logo>
                 </Center>
                 <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
+                    <MenuItem style={{ letterSpacing: '4px' }}>
+                        REGISTER
+                    </MenuItem>
+                    <MenuItem style={{ letterSpacing: '4px' }}>
+                        SIGN IN
+                    </MenuItem>
                     <MenuItem>
                         <Badge badgeContent={4} color='primary'>
                             <ShoppingCartOutlined color='action' />

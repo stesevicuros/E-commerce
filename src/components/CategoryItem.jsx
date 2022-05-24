@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components';
+import React from 'react';
 
 const Container = styled.div`
     flex: 1;
@@ -34,11 +34,12 @@ const Button = styled.button`
     color: grey;
     cursor: pointer;
     border-radius: 0.2rem;
-    :hover {
-        background-color: white;
-        transition: ease 0.5s;
-    }
+    transition: all 0.5s ease;
     font-weight: 600;
+
+    &:hover {
+        background-color: white;
+    }
 `;
 
 export default function CategoryItem({ item }) {

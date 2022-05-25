@@ -4,11 +4,14 @@ import Navbar from '../components/Navbar';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
 import { Add, Remove } from '@material-ui/icons';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
     padding: 1.25rem;
+
+    ${mobile({ padding: '0.625rem' })}
 `;
 
 const Title = styled.h1`
@@ -25,16 +28,27 @@ const Top = styled.div`
 `;
 
 const TopButton = styled.button`
-    padding: 0.625rem;
     font-weight: 600;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
     border: ${(props) => props.type === 'filled' && 'none'};
+    padding: ${(props) => (props.type === 'filled' ? '0.75rem' : '0.625rem')};
     background-color: ${(props) =>
         props.type === 'filled' ? 'black' : 'transparent'};
     color: ${(props) => props.type === 'filled' && 'white'};
+    transition: all 0.5s ease;
+
+    &:hover {
+        background-color: ${(props) =>
+            props.type === 'filled' ? 'black' : '#31abab29'};
+        color: ${(props) => (props.type === 'filled' ? '#ffc3c3' : 'black')};
+    }
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+    ${mobile({ display: 'none' })}
+`;
 
 const TopText = styled.span`
     text-decoration: underline;
@@ -45,6 +59,8 @@ const TopText = styled.span`
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
+
+    ${mobile({ flexDirection: 'column' })}
 `;
 
 const Info = styled.div`
@@ -54,6 +70,8 @@ const Info = styled.div`
 const Product = styled.div`
     display: flex;
     justify-content: space-between;
+
+    ${mobile({ flexDirection: 'column' })}
 `;
 
 const ProductDetail = styled.div`
@@ -102,11 +120,15 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
     font-size: 1.5rem;
     margin: 5px;
+
+    ${mobile({ margin: '5px 1rem ' })}
 `;
 
 const ProductPrice = styled.div`
     font-size: 2rem;
     font-weight: 200;
+
+    ${mobile({ marginBottom: '1.25rem' })}
 `;
 
 const Hr = styled.hr`

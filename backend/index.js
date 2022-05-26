@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/user');
+const authRoute = require('./routes/auth');
 
 const app = express();
 
@@ -10,11 +11,8 @@ mongoose
     .then(() => console.log('DB Connection Successful!'))
     .catch((err) => console.error(err));
 
-app.get('/api/test', () => {
-    console.log('test is successful');
-});
-
 app.use(express.json());
+app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 
 app.listen(process.env.PORT || 3000, () => {

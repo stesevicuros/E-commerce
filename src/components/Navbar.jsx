@@ -1,6 +1,8 @@
 import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
 
@@ -92,6 +94,8 @@ const MenuItem = styled.div`
 `;
 
 export default function Navbar() {
+	const quantity = useSelector((state) => state.cart.quantity);
+
 	return (
 		<Container>
 			<Wrapper>
@@ -113,11 +117,13 @@ export default function Navbar() {
 				<Right>
 					<MenuItem>REGISTER</MenuItem>
 					<MenuItem>SIGN IN</MenuItem>
-					<MenuItem type='card'>
-						<Badge badgeContent={4} color='primary'>
-							<ShoppingCartOutlined color='action' />
-						</Badge>
-					</MenuItem>
+					<Link to='/cart'>
+						<MenuItem type='card'>
+							<Badge badgeContent={quantity} color='primary'>
+								<ShoppingCartOutlined color='action' />
+							</Badge>
+						</MenuItem>
+					</Link>
 				</Right>
 			</Wrapper>
 		</Container>

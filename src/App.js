@@ -28,7 +28,7 @@ function App() {
 				/>
 				<Route
 					path='/register'
-					element={user ? <Navigate replace to='/' /> : <Login />}
+					element={user ? <Navigate replace to='/' /> : <Register />}
 				/>
 			</Routes>
 		</Router>

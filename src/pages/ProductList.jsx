@@ -64,7 +64,7 @@ export default function ProductList() {
 			<Navbar />
 			<Announcement />
 			<Title>{cat}</Title>
-			<FilterContainer>
+			{/* <FilterContainer>
 				<Filter>
 					<FilterText>Filter Products:</FilterText>
 					<Select name='color' onChange={handleFilters}>
@@ -95,8 +95,12 @@ export default function ProductList() {
 						<Option value='desc'>Price (desc)</Option>
 					</Select>
 				</Filter>
-			</FilterContainer>
-			<Products cat={cat} filters={filters} sort={sort} />
+			</FilterContainer> */}
+			<Products
+				cat={cat.toLowerCase() === 'all' ? undefined : cat}
+				filters={filters}
+				sort={sort}
+			/>
 			<Newsletter />
 			<Footer />
 		</Container>

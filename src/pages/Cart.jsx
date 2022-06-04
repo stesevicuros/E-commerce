@@ -5,10 +5,11 @@ import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
 import { Add, Remove, StayPrimaryPortraitRounded } from '@material-ui/icons';
 import { mobile } from '../responsive';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
+import { removeProduct } from '../redux/cartRedux';
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -76,6 +77,7 @@ const Info = styled.div`
 const Product = styled.div`
 	display: flex;
 	justify-content: space-between;
+	border-bottom: 1px solid lightgrey;
 
 	${mobile({ flexDirection: 'column' })}
 `;
@@ -147,8 +149,8 @@ const Summary = styled.div`
 	flex: 1;
 	border: 0.5px solid lightgrey;
 	border-radius: 0.7rem;
-	padding: 1.25rem;
-	height: auto;
+	padding: 1.25rem 1.5rem 1.5rem;
+	height: fit-content;
 `;
 
 const SummaryTitle = styled.h1`
@@ -173,12 +175,19 @@ const Button = styled.button`
 	background-color: black;
 	color: white;
 	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.5s ease;
+
+	&:hover {
+		color: #ffc3c3;
+	}
 `;
 
 export default function Cart() {
 	const cart = useSelector((state) => state.cart);
 	const [stripeToken, setStripeToken] = useState(null);
 	const history = useNavigate();
+	const dispatch = useDispatch();
 
 	const onToken = (token) => {
 		setStripeToken(token);
@@ -196,60 +205,69 @@ export default function Cart() {
 		};
 		stripeToken && makeRequest();
 	}, [stripeToken, cart.total, history]);
+
+	function onRemoveProduct(id) {
+		dispatch(removeProduct({ id }));
+	}
+
+	let totalPrice = cart.products.reduce((a, b) => a + parseInt(b.price), 0);
+
 	return (
 		<Container>
 			<Navbar />
 			<Announcement />
 			<Wrapper>
 				<Title>YOUR CART</Title>
-				<Top>
-					<TopButton>CONTINUE SHOPPING</TopButton>
-					<TopTexts>
-						<TopText>Shopping bag (2)</TopText>
-						<TopText>Your Wishlist (0)</TopText>
-					</TopTexts>
-					<TopButton type='filled'>CHECKOUT NOW</TopButton>
-				</Top>
+				<Top></Top>
 				<Bottom>
 					<Info>
-						{cart.product.map((product) => (
-							<Product>
-								<ProductDetail>
-									<Image src={product.img} />
-									<Details>
-										<ProductName>
-											<b>Product:</b> {product.title}
-										</ProductName>
-										<ProductId>
-											<b>ID:</b> {product.id}
-										</ProductId>
-										<ProductColor color={product.color} />
-										<ProductSize>
-											<b>Size:</b> {product.size}
-										</ProductSize>
-									</Details>
-								</ProductDetail>
-								<PriceDetail>
-									<ProductAmountContainer>
-										<Add />
-										<ProductAmount>
-											{product.quantity}
-										</ProductAmount>
-										<Remove />
-									</ProductAmountContainer>
-									<ProductPrice>
-										$ {product.price * product.quantity}
-									</ProductPrice>
-								</PriceDetail>
-							</Product>
-						))}
-						<Hr />
+						{cart.products &&
+							cart.products.map((product) => (
+								<Product>
+									<ProductDetail>
+										<Image src={product.img} />
+										<Details>
+											<ProductName>
+												<b>Product:</b> {product.title}
+											</ProductName>
+											<ProductId>
+												<b>ID:</b> {product.id}
+											</ProductId>
+											<ProductColor
+												color={product.color}
+											/>
+											<ProductSize>
+												<b>Size:</b> {product.size}
+											</ProductSize>
+										</Details>
+									</ProductDetail>
+									<PriceDetail>
+										<ProductAmountContainer>
+											{/* <Add />
+											<ProductAmount>
+												{product.quantity}
+											</ProductAmount>
+											<div
+												onClick={() =>
+													onRemoveProduct(product.id)
+												}
+											>
+												<Remove />
+											</div> */}
+										</ProductAmountContainer>
+										<ProductPrice>
+											$ {product.price * product.quantity}
+										</ProductPrice>
+									</PriceDetail>
+								</Product>
+							))}
+						{/* <Hr /> */}
 					</Info>
 					<Summary>
 						<SummaryTitle>ORDER SUMMARY</SummaryTitle>
 						<SummaryItem>
 							<SummaryItemText>Subtotal</SummaryItemText>
-							<SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+							<SummaryItemPrice>$ {totalPrice}</SummaryItemPrice>
 						</SummaryItem>
 						<SummaryItem>
 							<SummaryItemText>
@@ -263,15 +281,15 @@ export default function Cart() {
 						</SummaryItem>
 						<SummaryItem type='total'>
 							<SummaryItemText>Total</SummaryItemText>
-							<SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+							<SummaryItemPrice>$ {totalPrice}</SummaryItemPrice>
 						</SummaryItem>
 						<StripeCheckout
 							name='Lama Shop'
 							image='https://i.ibb.co/0Q532zC/pngegg.png'
 							billingAddress
 							shippingAddress
-							description={`Your total is $${cart.total}`}
-							amount={cart.total * 100}
+							description={`Your total is $${totalPrice}`}
+							amount={totalPrice * 100}
 							token={onToken}
 							stripeKey={KEY}
 						>

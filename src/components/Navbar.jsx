@@ -94,14 +94,15 @@ const MenuItem = styled.div`
 `;
 
 export default function Navbar() {
-	const quantity = useSelector((state) => state.cart.quantity);
+	const user = useSelector((state) => state.user.currentUser);
+	const cart = useSelector((state) => state.cart);
 
 	return (
 		<Container>
 			<Wrapper>
 				<Left>
 					<Language>EN</Language>
-					<SearchContainer>
+					{/* <SearchContainer>
 						<Input placeholder='Search' />
 						<Search
 							style={{
@@ -109,17 +110,45 @@ export default function Navbar() {
 								fontSize: '1rem',
 							}}
 						/>
-					</SearchContainer>
+					</SearchContainer> */}
 				</Left>
 				<Center>
-					<Logo>LAMA.</Logo>
+					<Link
+						to='/'
+						style={{ textDecoration: 'none', color: 'black' }}
+					>
+						<Logo>LAMA.</Logo>
+					</Link>
 				</Center>
 				<Right>
-					<MenuItem>REGISTER</MenuItem>
-					<MenuItem>SIGN IN</MenuItem>
+					{!user && (
+						<>
+							<Link
+								to='/register'
+								style={{
+									textDecoration: 'none',
+									color: 'black',
+								}}
+							>
+								<MenuItem>REGISTER</MenuItem>
+							</Link>
+							<Link
+								to='/login'
+								style={{
+									textDecoration: 'none',
+									color: 'black',
+								}}
+							>
+								<MenuItem>LOGIN</MenuItem>
+							</Link>
+						</>
+					)}
 					<Link to='/cart'>
 						<MenuItem type='card'>
-							<Badge badgeContent={quantity} color='primary'>
+							<Badge
+								badgeContent={cart.products.length}
+								color='primary'
+							>
 								<ShoppingCartOutlined color='action' />
 							</Badge>
 						</MenuItem>

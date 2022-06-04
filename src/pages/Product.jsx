@@ -201,9 +201,9 @@ export default function Product() {
 					</FilterContainer>
 					<AddContainer>
 						<AmountContainer>
-							<Remove onClick={() => handleQuantity('dec')} />
+							{/* <Remove onClick={() => handleQuantity('dec')} />
 							<Amount>{quantity}</Amount>
-							<Add onClick={() => handleQuantity('inc')} />
+							<Add onClick={() => handleQuantity('inc')} /> */}
 						</AmountContainer>
 						<Button onClick={handleClick}>ADD TO CART</Button>
 					</AddContainer>

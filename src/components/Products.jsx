@@ -56,15 +56,28 @@ export default function Products({ cat, filters, sort }) {
 		}
 	}, [sort]);
 
+	console.log({ products, filteredProducts, cat });
 	return (
 		<Container>
-			{cat
-				? filteredProducts.map((item) => (
+			{cat ? (
+				filteredProducts.length === 0 ? (
+					<NoProducts />
+				) : (
+					filteredProducts.map((item) => (
 						<Product item={item} key={item.id} />
-				  ))
-				: products.slice
-						.call(0, 8)
-						.map((item) => <Product item={item} key={item.id} />)}
+					))
+				)
+			) : products.length === 0 ? (
+				<NoProducts />
+			) : (
+				products
+					.slice(0, 8)
+					.map((item) => <Product item={item} key={item.id} />)
+			)}
 		</Container>
 	);
+}
+
+function NoProducts() {
+	return <h4>No products found matching these filters</h4>;
 }

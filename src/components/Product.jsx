@@ -71,22 +71,22 @@ const Icon = styled.div`
 
 export default function Product({ item }) {
 	return (
-		<Container>
-			<Circle />
-			<Image src={item.img} />
-			<Info>
-				<Icon>
-					<ShoppingCartOutlined />
-				</Icon>
-				<Icon>
-					<Link to={`/product${item.id}`}>
+		<Link to={`/product/${item._id}`} style={{ color: 'black' }}>
+			<Container>
+				<Circle />
+				<Image src={item.img} />
+				<Info>
+					<Icon>
+						<ShoppingCartOutlined />
+					</Icon>
+					<Icon>
 						<Search />
-					</Link>
-				</Icon>
-				<Icon>
-					<FavoriteBorder />
-				</Icon>
-			</Info>
-		</Container>
+					</Icon>
+					<Icon>
+						<FavoriteBorder />
+					</Icon>
+				</Info>
+			</Container>
+		</Link>
 	);
 }

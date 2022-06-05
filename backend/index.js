@@ -9,6 +9,8 @@ const orderRoute = require('./routes/order');
 const stripeRoute = require('./routes/stripe');
 const cors = require('cors');
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const app = express();
 
 mongoose
@@ -25,6 +27,14 @@ app.use('/api/carts', cartRoute);
 app.use('/api/orders', orderRoute);
 app.use('/api/checkout', stripeRoute);
 
-app.listen(process.env.PORT || 3000, () => {
-	console.log('Listening on port 3000 :)');
+if (isProduction) {
+	app.use(express.static('frontend/build'));
+
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+	});
+}
+
+app.listen(process.env.PORT || 5000, () => {
+	console.log('Listening on port 5000 :)');
 });

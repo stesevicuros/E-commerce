@@ -3,7 +3,7 @@ import {
 	FavoriteBorder,
 	Search,
 	ShoppingCartOutlined,
-} from '@@mui/icons-material';
+} from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 

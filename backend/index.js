@@ -29,10 +29,10 @@ app.use('/api/orders', orderRoute);
 app.use('/api/checkout', stripeRoute);
 
 if (isProduction) {
-	app.use(express.static('frontend/build'));
+	app.use(express.static('build'));
 
 	app.get('*', (req, res) => {
-		res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+		res.sendFile(path.resolve(__dirname, '../', 'build', 'index.html'));
 	});
 }
 

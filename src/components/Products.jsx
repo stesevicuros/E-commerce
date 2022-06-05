@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { popularProducts } from '../data';
+import { publicRequest } from '../requestMethods';
 import Product from './Product';
 
 const Container = styled.div`
@@ -18,10 +19,8 @@ export default function Products({ cat, filters, sort }) {
 	useEffect(() => {
 		const getProducts = async () => {
 			try {
-				const res = await axios.get(
-					cat
-						? `http://localhost:3000/api/products?category=${cat}`
-						: 'http://localhost:3000/api/products?category'
+				const res = await publicRequest.get(
+					cat ? `/products?category=${cat}` : '/products?category'
 				);
 				setProducts(res.data);
 			} catch (err) {}

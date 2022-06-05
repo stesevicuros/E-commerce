@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
-import { Add, Remove, StayPrimaryPortraitRounded } from '@material-ui/icons';
 import { mobile } from '../responsive';
 import { useDispatch, useSelector } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';

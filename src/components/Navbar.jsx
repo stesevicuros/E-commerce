@@ -1,4 +1,4 @@
-import { Badge, ShoppingCart } from '@mui/icons-material';
+import { Badge, ShoppingCartOutlined } from '@mui/icons-material';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -148,7 +148,7 @@ export default function Navbar() {
 								badgeContent={cart.products.length}
 								color='primary'
 							>
-								<ShoppingCart color='action' />
+								<ShoppingCartOutlined color='action' />
 							</Badge>
 						</MenuItem>
 					</Link>

@@ -31,15 +31,15 @@ export const categories = [
 	},
 	{
 		id: 2,
-		img: 'https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-		title: 'SUMMER STYLE',
-		cat: 'Summer',
+		img: 'https://i.ibb.co/VgZXdz7/86f3119eedbbd41e53b8798f3e6a771a.jpg',
+		title: 'MANS CLOTHING',
+		cat: 'Man',
 	},
 	{
 		id: 3,
-		img: 'https://i.ibb.co/nmv3G7H/86f3119eedbbd41e53b8798f3e6a771a.jpg',
-		title: 'MANS CLOTHING',
-		cat: 'Man',
+		img: 'https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+		title: 'SUMMER STYLE',
+		cat: 'Summer',
 	},
 ];
 

@@ -147,9 +147,8 @@ export default function Navbar() {
 							<Badge
 								badgeContent={cart.products.length}
 								color='primary'
-							>
-								<ShoppingCartOutlined color='action' />
-							</Badge>
+							></Badge>
+							<ShoppingCartOutlined color='action' />
 						</MenuItem>
 					</Link>
 				</Right>

@@ -114,8 +114,8 @@ export default function Login() {
 						LOGIN
 					</Button>
 					{error && <Error>Something went wrong. . .</Error>}
-					<Link>DON'T REMEMBER MY PASSWORD</Link>
-					<Link>CREATE AN ACCOUNT</Link>
+
+					<Link to='/register'>CREATE AN ACCOUNT</Link>
 				</Form>
 			</Wrapper>
 		</Container>

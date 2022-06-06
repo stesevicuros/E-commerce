@@ -121,7 +121,7 @@ export default function Navbar() {
 					</Link>
 				</Center>
 				<Right>
-					{!user && (
+					{/* {!user && (
 						<>
 							<Link
 								to='/register'
@@ -142,7 +142,7 @@ export default function Navbar() {
 								<MenuItem>LOGIN</MenuItem>
 							</Link>
 						</>
-					)}
+					)} */}
 					<Link to='/cart'>
 						<MenuItem type='card'>
 							<Badge

@@ -9,6 +9,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
 import { removeProduct } from '../redux/cartRedux';
+import { Add, Remove } from '@mui/icons-material';
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -242,7 +243,7 @@ export default function Cart() {
 									</ProductDetail>
 									<PriceDetail>
 										<ProductAmountContainer>
-											{/* <Add />
+											<Add />
 											<ProductAmount>
 												{product.quantity}
 											</ProductAmount>
@@ -252,7 +253,7 @@ export default function Cart() {
 												}
 											>
 												<Remove />
-											</div> */}
+											</div>
 										</ProductAmountContainer>
 										<ProductPrice>
 											$ {product.price * product.quantity}

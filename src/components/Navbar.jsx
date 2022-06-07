@@ -80,12 +80,6 @@ const MenuItem = styled.div`
 	cursor: pointer;
 	margin: 0 1.5rem;
 	letter-spacing: ${(props) => (props.type === 'card' ? '0px' : '4px')};
-
-	${mobile({
-		fontSize: '4.5rem',
-		margin: '0 0.625rem',
-		letterSpacing: '0px',
-	})}
 `;
 
 export default function Navbar() {
@@ -144,7 +138,10 @@ export default function Navbar() {
 								badgeContent={cart.products.length}
 								color='primary'
 							>
-								<ShoppingCartOutlined color='action' />
+								<ShoppingCartOutlined
+									color='action'
+									style={{ height: '60%' }}
+								/>
 							</Badge>
 						</MenuItem>
 					</Link>

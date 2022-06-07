@@ -9,6 +9,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
 import { removeProduct } from '../redux/cartRedux';
+import { Remove } from '@mui/icons-material';
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -33,34 +34,34 @@ const Top = styled.div`
 	padding: 1.25rem;
 `;
 
-const TopButton = styled.button`
-	font-weight: 600;
-	cursor: pointer;
-	white-space: nowrap;
-	overflow: hidden;
-	border: ${(props) => props.type === 'filled' && 'none'};
-	padding: ${(props) => (props.type === 'filled' ? '0.75rem' : '0.625rem')};
-	background-color: ${(props) =>
-		props.type === 'filled' ? 'black' : 'transparent'};
-	color: ${(props) => props.type === 'filled' && 'white'};
-	transition: all 0.5s ease;
+// const TopButton = styled.button`
+// 	font-weight: 600;
+// 	cursor: pointer;
+// 	white-space: nowrap;
+// 	overflow: hidden;
+// 	border: ${(props) => props.type === 'filled' && 'none'};
+// 	padding: ${(props) => (props.type === 'filled' ? '0.75rem' : '0.625rem')};
+// 	background-color: ${(props) =>
+// 		props.type === 'filled' ? 'black' : 'transparent'};
+// 	color: ${(props) => props.type === 'filled' && 'white'};
+// 	transition: all 0.5s ease;
 
-	&:hover {
-		background-color: ${(props) =>
-			props.type === 'filled' ? 'black' : '#31abab29'};
-		color: ${(props) => (props.type === 'filled' ? '#ffc3c3' : 'black')};
-	}
-`;
+// 	&:hover {
+// 		background-color: ${(props) =>
+// 			props.type === 'filled' ? 'black' : '#31abab29'};
+// 		color: ${(props) => (props.type === 'filled' ? '#ffc3c3' : 'black')};
+// 	}
+// `;
 
-const TopTexts = styled.div`
-	${mobile({ display: 'none' })}
-`;
+// const TopTexts = styled.div`
+// 	${mobile({ display: 'none' })}
+// `;
 
-const TopText = styled.span`
-	text-decoration: underline;
-	cursor: pointer;
-	margin: 0 0.625rem;
-`;
+// const TopText = styled.span`
+// 	text-decoration: underline;
+// 	cursor: pointer;
+// 	margin: 0 0.625rem;
+// `;
 
 const Bottom = styled.div`
 	display: flex;
@@ -124,12 +125,12 @@ const ProductAmountContainer = styled.div`
 	margin-bottom: 1.25rem;
 `;
 
-const ProductAmount = styled.div`
-	font-size: 1.5rem;
-	margin: 5px;
+// const ProductAmount = styled.div`
+// 	font-size: 1.5rem;
+// 	margin: 5px;
 
-	${mobile({ margin: '5px 1rem ' })}
-`;
+// 	${mobile({ margin: '5px 1rem ' })}
+// `;
 
 const ProductPrice = styled.div`
 	font-size: 2rem;
@@ -138,11 +139,11 @@ const ProductPrice = styled.div`
 	${mobile({ marginBottom: '1.25rem' })}
 `;
 
-const Hr = styled.hr`
-	background-color: #eee;
-	border: none;
-	height: 1px;
-`;
+// const Hr = styled.hr`
+// 	background-color: #eee;
+// 	border: none;
+// 	height: 1px;
+// `;
 
 const Summary = styled.div`
 	flex: 1;
@@ -205,8 +206,8 @@ export default function Cart() {
 		stripeToken && makeRequest();
 	}, [stripeToken, cart.total, history]);
 
-	function onRemoveProduct(id) {
-		dispatch(removeProduct({ id }));
+	function onRemoveProduct(product) {
+		dispatch(removeProduct(product));
 	}
 
 	let totalPrice = cart.products.reduce((a, b) => a + parseInt(b.price), 0);
@@ -242,17 +243,13 @@ export default function Cart() {
 									</ProductDetail>
 									<PriceDetail>
 										<ProductAmountContainer>
-											{/* <Add />
-											<ProductAmount>
-												{product.quantity}
-											</ProductAmount>
 											<div
 												onClick={() =>
-													onRemoveProduct(product.id)
+													onRemoveProduct(product)
 												}
 											>
 												<Remove />
-											</div> */}
+											</div>
 										</ProductAmountContainer>
 										<ProductPrice>
 											$ {product.price * product.quantity}

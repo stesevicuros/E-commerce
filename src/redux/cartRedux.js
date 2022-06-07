@@ -9,6 +9,11 @@ const cartSlice = createSlice({
 		addProduct: (state, action) => {
 			state.products.push(action.payload);
 		},
+		removeProduct: (state, action) => {
+			state.products = state.products.filter(
+				(product) => product.id !== action.payload.id
+			);
+		},
 	},
 });
 

@@ -8,7 +8,7 @@ import { mobile } from '../responsive';
 
 const Container = styled.div`
 	height: 3.75rem;
-	${mobile({ height: '4rem' })}
+	${mobile({ height: 'fit-content' })}
 `;
 
 const Wrapper = styled.div`
@@ -82,7 +82,7 @@ const MenuItem = styled.div`
 	letter-spacing: ${(props) => (props.type === 'card' ? '0px' : '4px')};
 
 	${mobile({
-		fontSize: '4rem',
+		fontSize: '4.5rem',
 		margin: '0 0.625rem',
 		letterSpacing: '0px',
 	})}

@@ -189,6 +189,8 @@ export default function Cart() {
 	const history = useNavigate();
 	const dispatch = useDispatch();
 
+	let product1 = cart.products.map((product) => product);
+
 	const onToken = (token) => {
 		setStripeToken(token);
 	};
@@ -243,13 +245,13 @@ export default function Cart() {
 									</ProductDetail>
 									<PriceDetail>
 										<ProductAmountContainer>
-											<div
+											{/* <div
 												onClick={() =>
 													onRemoveProduct(product)
 												}
 											>
 												<Remove />
-											</div>
+											</div> */}
 										</ProductAmountContainer>
 										<ProductPrice>
 											$ {product.price * product.quantity}
@@ -257,6 +259,9 @@ export default function Cart() {
 									</PriceDetail>
 								</Product>
 							))}
+						<div onClick={() => onRemoveProduct(product1)}>
+							<Remove />
+						</div>
 						{/* <Hr /> */}
 					</Info>
 					<Summary>

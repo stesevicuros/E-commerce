@@ -10,7 +10,9 @@ import { addProduct } from '../redux/cartRedux';
 import { publicRequest } from '../requestMethods';
 import { mobile } from '../responsive';
 
-const Container = styled.div``;
+const Container = styled.div`
+	${mobile({ fontSize: '4em' })}
+`;
 
 const Wrapper = styled.div`
 	padding: 3rem;

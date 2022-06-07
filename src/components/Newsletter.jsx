@@ -10,6 +10,8 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+
+	${mobile({ height: '30vh' })}
 `;
 
 const Title = styled.h1`
@@ -46,6 +48,8 @@ const Input = styled.input`
 	font-family: 'Urbanist', sans-serif;
 	font-weight: 500;
 	outline: none;
+
+	${mobile({ padding: '1rem 2rem' })}
 
 	&::placeholder {
 		font-family: 'Urbanist', sans-serif;

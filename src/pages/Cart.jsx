@@ -95,6 +95,8 @@ const Details = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+
+	${mobile({ fontSize: '3em' })}
 `;
 
 const ProductName = styled.span``;

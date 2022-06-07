@@ -10,7 +10,7 @@ const Container = styled.div`
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	${mobile({ padding: '0 1.15rem', flexDirection: 'column' })}
+	${mobile({ padding: '1rem 0', flexDirection: 'column' })}
 `;
 
 export default function Products({ cat, filters, sort }) {

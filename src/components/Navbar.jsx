@@ -34,7 +34,6 @@ const Language = styled.span`
 `;
 
 const SearchContainer = styled.div`
-	border: 0.5px solid lightgrey;
 	display: flex;
 	align-items: center;
 	margin-left: 2rem;
@@ -63,7 +62,7 @@ const Logo = styled.h1`
 	letter-spacing: 5px;
 
 	${mobile({
-		fontSize: '2rem',
+		fontSize: '5rem',
 		letterSpacing: '3px',
 		marginLeft: '0.625rem',
 	})}
@@ -83,7 +82,7 @@ const MenuItem = styled.div`
 	letter-spacing: ${(props) => (props.type === 'card' ? '0px' : '4px')};
 
 	${mobile({
-		fontSize: '1.5rem',
+		fontSize: '4rem',
 		margin: '0 0.625rem',
 		letterSpacing: '0px',
 	})}

@@ -122,7 +122,7 @@ const PriceDetail = styled.div`
 const ProductAmountContainer = styled.div`
 	display: flex;
 	align-items: center;
-	margin-bottom: 1.25rem;
+	margin: 1.25rem 0;
 `;
 
 // const ProductAmount = styled.div`
@@ -244,24 +244,17 @@ export default function Cart() {
 										</Details>
 									</ProductDetail>
 									<PriceDetail>
-										<ProductAmountContainer>
-											{/* <div
-												onClick={() =>
-													onRemoveProduct(product)
-												}
-											>
-												<Remove />
-											</div> */}
-										</ProductAmountContainer>
 										<ProductPrice>
 											$ {product.price * product.quantity}
 										</ProductPrice>
 									</PriceDetail>
 								</Product>
 							))}
-						<div onClick={() => onRemoveProduct(product1)}>
-							<Remove />
-						</div>
+						<ProductAmountContainer>
+							<div onClick={() => onRemoveProduct(product1)}>
+								Remove
+							</div>
+						</ProductAmountContainer>
 						{/* <Hr /> */}
 					</Info>
 					<Summary>

@@ -15,6 +15,8 @@ const Container = styled.div`
 const Title = styled.h1`
 	font-size: 4.4rem;
 	margin: 1.2rem;
+
+	${mobile({ fontSize: '5rem' })}
 `;
 
 const Desc = styled.div`
@@ -22,7 +24,7 @@ const Desc = styled.div`
 	font-weight: 300;
 	margin-bottom: 1.2rem;
 
-	${mobile({ textAlign: 'center' })}
+	${mobile({ textAlign: 'center', fontSize: '2rem' })}
 `;
 
 const InputContainer = styled.div`
@@ -34,7 +36,7 @@ const InputContainer = styled.div`
 	border: 1px solid lightgrey;
 	border-radius: 0.2rem;
 
-	${mobile({ width: '80%' })}
+	${mobile({ width: '65%' })}
 `;
 
 const Input = styled.input`
@@ -50,6 +52,8 @@ const Input = styled.input`
 		letter-spacing: 3px;
 		font-weight: 600;
 		color: #c9c9c9;
+
+		${mobile({ fontSize: '1.5rem' })}
 	}
 `;
 

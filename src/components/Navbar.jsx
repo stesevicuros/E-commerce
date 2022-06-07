@@ -8,7 +8,7 @@ import { mobile } from '../responsive';
 
 const Container = styled.div`
 	height: 3.75rem;
-	${mobile({ height: '3.125rem' })}
+	${mobile({ height: '4rem' })}
 `;
 
 const Wrapper = styled.div`
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	${mobile({ padding: '0.625rem 0' })}
+	${mobile({ padding: '1rem 0' })}
 `;
 
 const Left = styled.div`
@@ -39,20 +39,18 @@ const SearchContainer = styled.div`
 	align-items: center;
 	margin-left: 2rem;
 	padding: 0.3rem;
-
-	${mobile({ marginLeft: '1rem' })}
 `;
 
-const Input = styled.input`
-	border: none;
-	outline: none;
+// const Input = styled.input`
+// 	border: none;
+// 	outline: none;
 
-	&::placeholder {
-		font-family: 'Urbanist', sans-serif;
-	}
+// 	&::placeholder {
+// 		font-family: 'Urbanist', sans-serif;
+// 	}
 
-	${mobile({ width: '3.125rem' })}
-`;
+// 	${mobile({ width: '3.125rem' })}
+// `;
 
 const Center = styled.div`
 	flex: 1;
@@ -65,7 +63,7 @@ const Logo = styled.h1`
 	letter-spacing: 5px;
 
 	${mobile({
-		fontSize: '1.5rem',
+		fontSize: '2rem',
 		letterSpacing: '3px',
 		marginLeft: '0.625rem',
 	})}
@@ -76,8 +74,6 @@ const Right = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-
-	${mobile({ flex: 2, justifyContent: 'center' })}
 `;
 
 const MenuItem = styled.div`
@@ -87,14 +83,14 @@ const MenuItem = styled.div`
 	letter-spacing: ${(props) => (props.type === 'card' ? '0px' : '4px')};
 
 	${mobile({
-		fontSize: '0.7rem',
+		fontSize: '1.5rem',
 		margin: '0 0.625rem',
 		letterSpacing: '0px',
 	})}
 `;
 
 export default function Navbar() {
-	const user = useSelector((state) => state.user.currentUser);
+	// const user = useSelector((state) => state.user.currentUser);
 	const cart = useSelector((state) => state.cart);
 
 	return (
@@ -102,15 +98,15 @@ export default function Navbar() {
 			<Wrapper>
 				<Left>
 					<Language>EN</Language>
-					{/* <SearchContainer>
-						<Input placeholder='Search' />
+					<SearchContainer>
+						{/* <Input placeholder='Search' />
 						<Search
 							style={{
 								color: 'grey',
 								fontSize: '1rem',
 							}}
-						/>
-					</SearchContainer> */}
+						/> */}
+					</SearchContainer>
 				</Left>
 				<Center>
 					<Link

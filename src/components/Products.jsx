@@ -1,8 +1,7 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { popularProducts } from '../data';
 import { publicRequest } from '../requestMethods';
+import { mobile } from '../responsive';
 import Product from './Product';
 
 const Container = styled.div`
@@ -10,6 +9,8 @@ const Container = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	${mobile({ padding: '0 1.15rem', flexDirection: 'column' })}
 `;
 
 export default function Products({ cat, filters, sort }) {

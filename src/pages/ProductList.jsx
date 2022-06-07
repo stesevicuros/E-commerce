@@ -22,7 +22,7 @@ const FilterContainer = styled.div`
 const Filter = styled.div`
 	margin: 1.25rem;
 
-	${mobile({ margin: '0 1.25rem', display: 'flex', flexDirection: 'column' })}
+	${mobile({ margin: '0 1.3rem', display: 'flex', flexDirection: 'column' })}
 `;
 
 const FilterText = styled.span`

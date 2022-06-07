@@ -10,15 +10,11 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-
-	${mobile({ height: '30vh' })}
 `;
 
 const Title = styled.h1`
 	font-size: 4.4rem;
 	margin: 1.2rem;
-
-	${mobile({ fontSize: '10rem' })}
 `;
 
 const Desc = styled.div`
@@ -26,7 +22,7 @@ const Desc = styled.div`
 	font-weight: 300;
 	margin-bottom: 1.2rem;
 
-	${mobile({ textAlign: 'center', fontSize: '4rem' })}
+	${mobile({ textAlign: 'center' })}
 `;
 
 const InputContainer = styled.div`
@@ -38,7 +34,7 @@ const InputContainer = styled.div`
 	border: 1px solid lightgrey;
 	border-radius: 0.2rem;
 
-	${mobile({ width: '65%', height: 'fit-content' })}
+	${mobile({ width: '80%' })}
 `;
 
 const Input = styled.input`
@@ -49,15 +45,11 @@ const Input = styled.input`
 	font-weight: 500;
 	outline: none;
 
-	${mobile({ padding: '6rem 3rem' })}
-
 	&::placeholder {
 		font-family: 'Urbanist', sans-serif;
 		letter-spacing: 3px;
 		font-weight: 600;
 		color: #c9c9c9;
-
-		${mobile({ fontSize: '4rem', fontWeight: '500' })}
 	}
 `;
 
@@ -72,8 +64,6 @@ const Button = styled.button`
 	margin: 2px;
 	background-color: teal;
 	color: white;
-
-	${mobile({ fontSize: '4rem' })}
 `;
 
 export default function Newsletter() {

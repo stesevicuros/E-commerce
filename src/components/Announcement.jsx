@@ -13,7 +13,7 @@ const Container = styled.div`
 	font-weight: 500;
 	letter-spacing: 3px;
 
-	${mobile({ height: 'fit-content', fontSize: '4rem' })}
+	${mobile({ height: 'fit-content', fontSize: '3rem' })}
 `;
 
 export default function Announcement() {

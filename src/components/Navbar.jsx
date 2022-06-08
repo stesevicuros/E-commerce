@@ -64,7 +64,7 @@ const Logo = styled.h1`
 	letter-spacing: 5px;
 
 	${mobile({
-		fontSize: '6rem',
+		fontSize: '5.5rem',
 		letterSpacing: '3px',
 		marginLeft: '0.625rem',
 	})}
@@ -87,12 +87,6 @@ const MenuItem = styled.div`
 	${mobile({
 		fontSize: '0.7rem',
 		margin: '0 0.625rem',
-	})}
-`;
-
-const Cart = styled.div`
-	${mobile({
-		fontSize: '0.7rem',
 	})}
 `;
 
@@ -152,9 +146,10 @@ export default function Navbar() {
 								badgeContent={cart.products.length}
 								color='primary'
 							>
-								<Cart>
-									<ShoppingCartOutlined color='action' />
-								</Cart>
+								<ShoppingCartOutlined
+									color='action'
+									style={{ transform: 'scale(2.5)' }}
+								/>
 							</Badge>
 						</MenuItem>
 					</Link>

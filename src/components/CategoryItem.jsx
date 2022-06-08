@@ -31,7 +31,7 @@ const Title = styled.h1`
 	color: white;
 	margin-bottom: 1.5rem;
 
-	${mobile({ fontSize: '2.5rem' })}
+	${mobile({ fontSize: '3.5rem' })}
 `;
 const Button = styled.button`
 	border: none;
@@ -45,7 +45,7 @@ const Button = styled.button`
 
 	letter-spacing: 2px;
 
-	${mobile({ fontSize: '1.8rem' })}
+	${mobile({ fontSize: '2.8rem' })}
 
 	&:hover {
 		background-color: white;

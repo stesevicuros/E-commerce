@@ -11,12 +11,14 @@ const Container = styled.div`
 	justify-content: center;
 	flex-direction: column;
 
-	${mobile({ fontSize: '1.5em' })}
+	${mobile({ fontSize: '1.5em', height: '45vh' })}
 `;
 
 const Title = styled.h1`
 	font-size: 4.4rem;
 	margin: 1.2rem;
+
+	${mobile({ fontSize: '6em' })}
 `;
 
 const Desc = styled.div`
@@ -24,7 +26,7 @@ const Desc = styled.div`
 	font-weight: 300;
 	margin-bottom: 1.2rem;
 
-	${mobile({ textAlign: 'center' })}
+	${mobile({ textAlign: 'center', fontSize: '3rem' })}
 `;
 
 const InputContainer = styled.div`
@@ -36,7 +38,7 @@ const InputContainer = styled.div`
 	border: 1px solid lightgrey;
 	border-radius: 0.2rem;
 
-	${mobile({ width: '80%' })}
+	${mobile({ width: '80%', height: 'fit-content' })}
 `;
 
 const Input = styled.input`
@@ -48,8 +50,8 @@ const Input = styled.input`
 	outline: none;
 
 	${mobile({
-		fontSize: '1.5rem',
-		padding: '3rem 1.5rem',
+		fontSize: '3rem',
+		padding: '5rem 2.5rem',
 	})}
 
 	&::placeholder {
@@ -57,6 +59,8 @@ const Input = styled.input`
 		letter-spacing: 3px;
 		font-weight: 600;
 		color: #c9c9c9;
+
+		${mobile({ letterSpacing: '6px' })}
 	}
 `;
 
@@ -71,6 +75,8 @@ const Button = styled.button`
 	margin: 2px;
 	background-color: teal;
 	color: white;
+
+	${mobile({ fontSize: '3rem' })}
 `;
 
 export default function Newsletter() {

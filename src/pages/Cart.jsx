@@ -212,14 +212,6 @@ export default function Cart() {
 
 	let totalPrice = cart.products.reduce((a, b) => a + parseInt(b.price), 0);
 
-	console.log(totalPrice);
-
-	if (totalPrice < 50) {
-		return (totalPrice = totalPrice + 5.9);
-	}
-
-	console.log(totalPrice);
-
 	return (
 		<Container>
 			<Navbar />
@@ -283,10 +275,17 @@ export default function Cart() {
 							</SummaryItemText>
 							<SummaryItemPrice>$ 5.90</SummaryItemPrice>
 						</SummaryItem>
-						<SummaryItem>
-							<SummaryItemText>Shipping Discount</SummaryItemText>
-							<SummaryItemPrice>$ -5.90</SummaryItemPrice>
-						</SummaryItem>
+						{totalPrice > 50 && (
+							<SummaryItem>
+								<SummaryItemText>
+									Shipping Discount
+								</SummaryItemText>
+								<SummaryItemPrice>$ -5.90</SummaryItemPrice>
+							</SummaryItem>
+						)}
+						{totalPrice < 50
+							? (totalPrice = totalPrice + 5.9)
+							: null}
 						<SummaryItem type='total'>
 							<SummaryItemText>Total</SummaryItemText>
 							<SummaryItemPrice>$ {totalPrice}</SummaryItemPrice>

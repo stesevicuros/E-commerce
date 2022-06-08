@@ -8,7 +8,7 @@ import { mobile } from '../responsive';
 
 const Container = styled.div`
 	height: 3.75rem;
-	${mobile({ height: '3.125rem' })}
+	${mobile({ height: 'fit-content' })}
 `;
 
 const Wrapper = styled.div`
@@ -42,16 +42,16 @@ const SearchContainer = styled.div`
 	${mobile({ marginLeft: '1rem' })}
 `;
 
-const Input = styled.input`
-	border: none;
-	outline: none;
+// const Input = styled.input`
+// 	border: none;
+// 	outline: none;
 
-	&::placeholder {
-		font-family: 'Urbanist', sans-serif;
-	}
+// 	&::placeholder {
+// 		font-family: 'Urbanist', sans-serif;
+// 	}
 
-	${mobile({ width: '3.125rem' })}
-`;
+// 	${mobile({ width: '3.125rem' })}
+// `;
 
 const Center = styled.div`
 	flex: 1;
@@ -93,7 +93,7 @@ const MenuItem = styled.div`
 `;
 
 export default function Navbar() {
-	const user = useSelector((state) => state.user.currentUser);
+	// const user = useSelector((state) => state.user.currentUser);
 	const cart = useSelector((state) => state.cart);
 
 	return (

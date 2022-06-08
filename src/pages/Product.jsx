@@ -10,7 +10,9 @@ import { addProduct } from '../redux/cartRedux';
 import { publicRequest } from '../requestMethods';
 import { mobile } from '../responsive';
 
-const Container = styled.div``;
+const Container = styled.div`
+	${mobile({ fontSize: '2em' })}
+`;
 
 const Wrapper = styled.div`
 	padding: 3rem;
@@ -28,7 +30,7 @@ const Image = styled.img`
 	height: 90 vh;
 	object-fit: cover;
 
-	${mobile({ height: '40vh' })}
+	${mobile({ height: '50vh' })}
 `;
 
 const InfoContainer = styled.div`
@@ -103,16 +105,16 @@ const AmountContainer = styled.div`
 	font-weight: 700;
 `;
 
-const Amount = styled.span`
-	margin: 0 5px;
-	width: 1.9rem;
-	height: 1.9rem;
-	border-radius: 0.6rem;
-	border: 1px solid teal;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
+// const Amount = styled.span`
+// 	margin: 0 5px;
+// 	width: 1.9rem;
+// 	height: 1.9rem;
+// 	border-radius: 0.6rem;
+// 	border: 1px solid teal;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// `;
 
 const Button = styled.button`
 	padding: 0.9rem;

@@ -9,11 +9,12 @@ import StripeCheckout from 'react-stripe-checkout';
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
 import { removeProduct } from '../redux/cartRedux';
-import { Remove } from '@mui/icons-material';
 
 const KEY = process.env.REACT_APP_STRIPE;
 
-const Container = styled.div``;
+const Container = styled.div`
+	${mobile({ fontSize: '2em' })}
+`;
 
 const Wrapper = styled.div`
 	padding: 1.25rem;

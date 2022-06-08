@@ -10,9 +10,7 @@ import { addProduct } from '../redux/cartRedux';
 import { publicRequest } from '../requestMethods';
 import { mobile } from '../responsive';
 
-const Container = styled.div`
-	${mobile({ fontSize: '4em' })}
-`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
 	padding: 3rem;
@@ -52,7 +50,6 @@ const Desc = styled.p`
 const Price = styled.span`
 	font-weight: 100;
 	font-size: 2.5rem;
-	${mobile({ fontSize: '3.5rem' })}
 `;
 
 const FilterContainer = styled.div`
@@ -61,7 +58,7 @@ const FilterContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 
-	${mobile({ width: '100%', fontSize: '2rem' })}
+	${mobile({ width: '100%' })}
 `;
 
 const Filter = styled.div`
@@ -125,8 +122,6 @@ const Button = styled.button`
 	font-weight: 500;
 	border-radius: 0.3rem;
 	letter-spacing: 1px;
-
-	${mobile({ fontSize: '2rem' })}
 
 	&:hover {
 		background-color: #f8f4f4;

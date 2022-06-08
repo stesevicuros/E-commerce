@@ -192,6 +192,7 @@ const Button = styled.button`
 		height: 'fit-content',
 		fontSize: '2.8rem',
 		padding: '1.5rem',
+		margin: '1rem auto 2rem',
 	})}
 
 	&:hover {

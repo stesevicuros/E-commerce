@@ -96,7 +96,7 @@ const ContactItem = styled.div`
 	display: flex;
 	align-items: center;
 
-	${mobile({ fontSize: '2rem' })}
+	${mobile({ transform: '(2.5)' })}
 `;
 
 const Payment = styled.img`

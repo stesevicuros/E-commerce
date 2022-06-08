@@ -53,7 +53,7 @@ const Price = styled.span`
 	font-weight: 100;
 	font-size: 2.5rem;
 
-	${mobile({ fontSize: '3.5rem' })}
+	${mobile({ fontSize: '4rem' })}
 `;
 
 const FilterContainer = styled.div`
@@ -68,13 +68,13 @@ const FilterContainer = styled.div`
 const Filter = styled.div`
 	display: flex;
 	align-items: center;
-
-	${mobile({ fontSize: '3rem' })}
 `;
 
 const FilterTitle = styled.span`
 	font-size: 1.25rem;
 	font-weight: 200;
+
+	${mobile({ fontSize: '3rem' })}
 `;
 
 const FilterColor = styled.div`
@@ -84,12 +84,16 @@ const FilterColor = styled.div`
 	background-color: ${(props) => props.color};
 	margin: 0 5px;
 	cursor: pointer;
+
+	${mobile({ fontSize: '3rem' })}
 `;
 
 const FilterSize = styled.select`
 	margin-left: 10px;
 	padding: 5px;
 	border-radius: 0.5rem;
+
+	${mobile({ fontSize: '3rem' })}
 `;
 
 const FilterSizeOption = styled.option``;

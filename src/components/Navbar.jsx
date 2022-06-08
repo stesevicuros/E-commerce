@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	${mobile({ padding: '0.625rem 0' })}
+	${mobile({ padding: '1.5rem 0' })}
 `;
 
 const Left = styled.div`
@@ -64,7 +64,7 @@ const Logo = styled.h1`
 	letter-spacing: 5px;
 
 	${mobile({
-		fontSize: '1.5rem',
+		fontSize: '6rem',
 		letterSpacing: '3px',
 		marginLeft: '0.625rem',
 	})}
@@ -83,12 +83,16 @@ const MenuItem = styled.div`
 	font-size: 0.9rem;
 	cursor: pointer;
 	margin: 0 1.5rem;
-	letter-spacing: ${(props) => (props.type === 'card' ? '0px' : '4px')};
 
 	${mobile({
 		fontSize: '0.7rem',
 		margin: '0 0.625rem',
-		letterSpacing: '0px',
+	})}
+`;
+
+const Cart = styled.div`
+	${mobile({
+		fontSize: '0.7rem',
 	})}
 `;
 
@@ -143,12 +147,14 @@ export default function Navbar() {
 						</>
 					)} */}
 					<Link to='/cart'>
-						<MenuItem type='card'>
+						<MenuItem>
 							<Badge
 								badgeContent={cart.products.length}
 								color='primary'
 							>
-								<ShoppingCartOutlined color='action' />
+								<Cart>
+									<ShoppingCartOutlined color='action' />
+								</Cart>
 							</Badge>
 						</MenuItem>
 					</Link>

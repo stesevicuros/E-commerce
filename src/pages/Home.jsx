@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { mobile } from '../responsive';
 
 const Component = styled.div`
-	${mobile({ fontSize: '2em' })}
+	${mobile({ fontSize: '1.5em' })}
 `;
 
 export default function Home() {

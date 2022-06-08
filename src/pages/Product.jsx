@@ -30,7 +30,7 @@ const Image = styled.img`
 	height: 90 vh;
 	object-fit: cover;
 
-	${mobile({ height: '50vh' })}
+	${mobile({ height: '40vh' })}
 `;
 
 const InfoContainer = styled.div`

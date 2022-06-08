@@ -46,6 +46,11 @@ const SocialIcon = styled.div`
 	align-items: center;
 	justify-content: center;
 	margin-right: 1.25rem;
+
+	${mobile({
+		height: 'auto',
+		width: '50%',
+	})}
 `;
 
 const Center = styled.div`

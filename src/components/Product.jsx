@@ -6,6 +6,7 @@ import {
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
 	flex: 1;
@@ -17,6 +18,10 @@ const Container = styled.div`
 	align-items: center;
 	background-color: #eef9ff;
 	position: relative;
+
+	${mobile({
+		height: '25vh',
+	})}
 `;
 
 const Circle = styled.div`

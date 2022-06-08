@@ -214,6 +214,12 @@ export default function Cart() {
 
 	console.log(totalPrice);
 
+	if (totalPrice < 50) {
+		return (totalPrice = totalPrice + 5.9);
+	}
+
+	console.log(totalPrice);
+
 	return (
 		<Container>
 			<Navbar />

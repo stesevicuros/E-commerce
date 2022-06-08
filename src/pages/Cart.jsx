@@ -320,6 +320,7 @@ export default function Cart() {
 							amount={totalPrice * 100}
 							token={onToken}
 							stripeKey={KEY}
+							style={{ width: '100%' }}
 						>
 							<Button>CHECKOUT NOW</Button>
 						</StripeCheckout>

@@ -8,7 +8,6 @@ import { mobile } from '../responsive';
 
 const Container = styled.div`
 	height: 3.75rem;
-	${mobile({ height: '3.125rem' })}
 `;
 
 const Wrapper = styled.div`
@@ -16,7 +15,6 @@ const Wrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	${mobile({ padding: '0.625rem 0' })}
 `;
 
 const Left = styled.div`
@@ -29,8 +27,6 @@ const Language = styled.span`
 	font-size: 0.9rem;
 	cursor: pointer;
 	letter-spacing: 1.5px;
-
-	${mobile({ display: 'none' })}
 `;
 
 const SearchContainer = styled.div`
@@ -39,8 +35,6 @@ const SearchContainer = styled.div`
 	align-items: center;
 	margin-left: 2rem;
 	padding: 0.3rem;
-
-	${mobile({ marginLeft: '1rem' })}
 `;
 
 const Input = styled.input`
@@ -50,8 +44,6 @@ const Input = styled.input`
 	&::placeholder {
 		font-family: 'Urbanist', sans-serif;
 	}
-
-	${mobile({ width: '3.125rem' })}
 `;
 
 const Center = styled.div`
@@ -63,12 +55,6 @@ const Logo = styled.h1`
 	font-weight: bold;
 	margin: 0;
 	letter-spacing: 5px;
-
-	${mobile({
-		fontSize: '1.5rem',
-		letterSpacing: '3px',
-		marginLeft: '0.625rem',
-	})}
 `;
 
 const Right = styled.div`
@@ -76,8 +62,6 @@ const Right = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-
-	${mobile({ flex: 2, justifyContent: 'center' })}
 `;
 
 const MenuItem = styled.div`

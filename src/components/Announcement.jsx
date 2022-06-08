@@ -12,8 +12,6 @@ const Container = styled.div`
 	font-size: 0.9rem;
 	font-weight: 500;
 	letter-spacing: 3px;
-
-	${mobile({ letterSpacing: '0' })}
 `;
 
 export default function Announcement() {

@@ -21,8 +21,6 @@ const Desc = styled.div`
 	font-size: 1.5rem;
 	font-weight: 300;
 	margin-bottom: 1.2rem;
-
-	${mobile({ textAlign: 'center' })}
 `;
 
 const InputContainer = styled.div`
@@ -33,8 +31,6 @@ const InputContainer = styled.div`
 	justify-content: space-between;
 	border: 1px solid lightgrey;
 	border-radius: 0.2rem;
-
-	${mobile({ width: '80%' })}
 `;
 
 const Input = styled.input`

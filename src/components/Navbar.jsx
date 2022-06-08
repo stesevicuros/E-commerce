@@ -34,7 +34,6 @@ const Language = styled.span`
 `;
 
 const SearchContainer = styled.div`
-	border: 0.5px solid lightgrey;
 	display: flex;
 	align-items: center;
 	margin-left: 2rem;
@@ -77,7 +76,7 @@ const Right = styled.div`
 	align-items: center;
 	justify-content: flex-end;
 
-	${mobile({ flex: 2, justifyContent: 'center' })}
+	${mobile({ flex: 1, justifyContent: 'center' })}
 `;
 
 const MenuItem = styled.div`
@@ -102,15 +101,15 @@ export default function Navbar() {
 			<Wrapper>
 				<Left>
 					<Language>EN</Language>
-					{/* <SearchContainer>
-						<Input placeholder='Search' />
+					<SearchContainer>
+						{/* <Input placeholder='Search' />
 						<Search
 							style={{
 								color: 'grey',
 								fontSize: '1rem',
 							}}
-						/>
-					</SearchContainer> */}
+						/> */}
+					</SearchContainer>
 				</Left>
 				<Center>
 					<Link

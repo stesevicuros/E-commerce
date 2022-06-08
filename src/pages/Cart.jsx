@@ -243,6 +243,15 @@ export default function Cart() {
 											</ProductSize>
 										</Details>
 									</ProductDetail>
+									<ProductAmountContainer>
+										<div
+											onClick={() =>
+												onRemoveProduct(product)
+											}
+										>
+											Remove
+										</div>
+									</ProductAmountContainer>
 									<PriceDetail>
 										<ProductPrice>
 											$ {product.price * product.quantity}
@@ -250,11 +259,6 @@ export default function Cart() {
 									</PriceDetail>
 								</Product>
 							))}
-						<ProductAmountContainer>
-							<div onClick={() => onRemoveProduct(product1)}>
-								Remove
-							</div>
-						</ProductAmountContainer>
 						{/* <Hr /> */}
 					</Info>
 					<Summary>

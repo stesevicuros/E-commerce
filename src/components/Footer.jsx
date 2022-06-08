@@ -48,8 +48,8 @@ const SocialIcon = styled.div`
 	margin-right: 1.25rem;
 
 	${mobile({
-		height: 'fit-content',
-		width: '50vw',
+		height: '25px',
+		width: '25px',
 	})}
 `;
 

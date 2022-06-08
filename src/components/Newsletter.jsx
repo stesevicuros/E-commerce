@@ -18,7 +18,7 @@ const Title = styled.h1`
 	font-size: 4.4rem;
 	margin: 1.2rem;
 
-	${mobile({ fontSize: '4.5rem' })}
+	${mobile({ fontSize: '6rem' })}
 `;
 
 const Desc = styled.div`
@@ -51,7 +51,7 @@ const Input = styled.input`
 
 	${mobile({
 		fontSize: '3rem',
-		padding: '4rem 22rem',
+		padding: '4rem 2rem',
 		flex: 6,
 	})}
 

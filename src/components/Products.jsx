@@ -79,5 +79,5 @@ export default function Products({ cat, filters, sort }) {
 }
 
 function NoProducts() {
-	return <h4>No products found matching these filters</h4>;
+	return <h3>No products found matching these filters</h3>;
 }

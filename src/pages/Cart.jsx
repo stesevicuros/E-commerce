@@ -189,8 +189,6 @@ export default function Cart() {
 	const history = useNavigate();
 	const dispatch = useDispatch();
 
-	let product1 = cart.products.map((product) => product);
-
 	const onToken = (token) => {
 		setStripeToken(token);
 	};
@@ -248,6 +246,10 @@ export default function Cart() {
 											onClick={() =>
 												onRemoveProduct(product)
 											}
+											style={{
+												cursor: 'pointer',
+												fontWeight: '500',
+											}}
 										>
 											Remove
 										</div>

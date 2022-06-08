@@ -212,6 +212,8 @@ export default function Cart() {
 
 	let totalPrice = cart.products.reduce((a, b) => a + parseInt(b.price), 0);
 
+	console.log(totalPrice);
+
 	return (
 		<Container>
 			<Navbar />

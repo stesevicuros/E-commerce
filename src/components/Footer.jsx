@@ -8,6 +8,7 @@ import {
 	Twitter,
 } from '@mui/icons-material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
 
@@ -26,10 +27,13 @@ const Left = styled.div`
 
 const Logo = styled.h1`
 	letter-spacing: 4px;
+
+	${mobile({ fontSize: '2.5rem' })}
 `;
 
 const Desc = styled.p`
 	margin: 1.3rem 0;
+	${mobile({ fontSize: '2rem' })}
 `;
 
 const SocialContainer = styled.div`
@@ -48,8 +52,8 @@ const SocialIcon = styled.div`
 	margin-right: 1.25rem;
 
 	${mobile({
-		width: '3.5rem',
-		height: '3.5rem',
+		width: '4.5rem',
+		height: '4.5rem',
 	})}
 `;
 
@@ -64,7 +68,7 @@ const Title = styled.h3`
 	letter-spacing: 1.5px;
 	margin: 1.85rem 0 3.09rem;
 
-	${mobile({ fontSize: '2rem' })}
+	${mobile({ fontSize: '2.5rem' })}
 `;
 
 const List = styled.ul`
@@ -92,7 +96,7 @@ const ContactItem = styled.div`
 	display: flex;
 	align-items: center;
 
-	${mobile({ fontSize: '1.5rem' })}
+	${mobile({ fontSize: '2rem' })}
 `;
 
 const Payment = styled.img`
@@ -103,7 +107,9 @@ export default function Footer() {
 	return (
 		<Container>
 			<Left>
-				<Logo>LAMA.</Logo>
+				<Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
+					<Logo>LAMA.</Logo>
+				</Link>
 				<Desc>
 					There are many variations of passages of Lorem Ipsum
 					available, but the majority have suffered alteration in some
@@ -128,10 +134,31 @@ export default function Footer() {
 			<Center>
 				<Title>Useful Links</Title>
 				<List>
-					<ListItem>Home</ListItem>
-					<ListItem>Cart</ListItem>
-					<ListItem>Man Fashion</ListItem>
-					<ListItem>Woman Fashion</ListItem>
+					<Link
+						to='/'
+						style={{ textDecoration: 'none', color: 'black' }}
+					>
+						<ListItem>Home</ListItem>
+					</Link>
+					<Link
+						to='/cart'
+						style={{ textDecoration: 'none', color: 'black' }}
+					>
+						<ListItem>Cart</ListItem>
+					</Link>
+					<Link
+						to='/products/Man'
+						style={{ textDecoration: 'none', color: 'black' }}
+					>
+						<ListItem>Man Fashion</ListItem>
+					</Link>
+					<Link
+						to='/products/Women'
+						style={{ textDecoration: 'none', color: 'black' }}
+					>
+						<ListItem>Woman Fashion</ListItem>
+					</Link>
+
 					<ListItem>Accessories</ListItem>
 					<ListItem>My Account</ListItem>
 					<ListItem>Order Tracking</ListItem>

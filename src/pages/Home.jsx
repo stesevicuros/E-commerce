@@ -7,11 +7,8 @@ import Products from '../components/Products';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
-import { mobile } from '../responsive';
 
-const Component = styled.div`
-	${mobile({ fontSize: '1.5em' })}
-`;
+const Component = styled.div``;
 
 export default function Home() {
 	return (

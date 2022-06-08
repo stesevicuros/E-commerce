@@ -52,6 +52,8 @@ const Desc = styled.p`
 const Price = styled.span`
 	font-weight: 100;
 	font-size: 2.5rem;
+
+	${mobile({ fontSize: '3.5rem' })}
 `;
 
 const FilterContainer = styled.div`
@@ -66,6 +68,8 @@ const FilterContainer = styled.div`
 const Filter = styled.div`
 	display: flex;
 	align-items: center;
+
+	${mobile({ fontSize: '3rem' })}
 `;
 
 const FilterTitle = styled.span`
@@ -124,6 +128,8 @@ const Button = styled.button`
 	font-weight: 500;
 	border-radius: 0.3rem;
 	letter-spacing: 1px;
+
+	${mobile({ fontSize: '3.5rem', padding: '1.5rem', letterSpacing: '2px' })}
 
 	&:hover {
 		background-color: #f8f4f4;

@@ -13,7 +13,7 @@ import { removeProduct } from '../redux/cartRedux';
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div`
-	${mobile({ fontSize: '2em' })}
+	${mobile({ fontSize: '2rem' })}
 `;
 
 const Wrapper = styled.div`
@@ -80,7 +80,7 @@ const Product = styled.div`
 	justify-content: space-between;
 	border-bottom: 1px solid lightgrey;
 
-	${mobile({ flexDirection: 'column' })}
+	${mobile({ flexDirection: 'row' })}
 `;
 
 const ProductDetail = styled.div`
@@ -97,6 +97,8 @@ const Details = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+
+	${mobile({ fontSize: '3rem' })}
 `;
 
 const ProductName = styled.span``;
@@ -140,6 +142,10 @@ const ProductPrice = styled.div`
 	${mobile({ marginBottom: '1.25rem' })}
 `;
 
+const Column = styled.div`
+	${mobile({ display: 'flex', flexDirection: 'column' })}
+`;
+
 // const Hr = styled.hr`
 // 	background-color: #eee;
 // 	border: none;
@@ -164,6 +170,8 @@ const SummaryItem = styled.div`
 	justify-content: space-between;
 	font-weight: ${(props) => props.type === 'total' && '500'};
 	font-size: ${(props) => props.type === 'total' && '1.5rem'};
+
+	${mobile({ fontSize: '3rem' })}
 `;
 
 const SummaryItemText = styled.span``;
@@ -178,6 +186,13 @@ const Button = styled.button`
 	font-weight: 600;
 	cursor: pointer;
 	transition: all 0.5s ease;
+
+	${mobile({
+		width: '60%',
+		height: 'fit-content',
+		fontSize: '2.8rem',
+		padding: '1.5rem',
+	})}
 
 	&:hover {
 		color: #ffc3c3;
@@ -242,24 +257,28 @@ export default function Cart() {
 											</ProductSize>
 										</Details>
 									</ProductDetail>
-									<ProductAmountContainer>
-										<div
-											onClick={() =>
-												onRemoveProduct(product)
-											}
-											style={{
-												cursor: 'pointer',
-												fontWeight: '500',
-											}}
-										>
-											Remove
-										</div>
-									</ProductAmountContainer>
-									<PriceDetail>
-										<ProductPrice>
-											$ {product.price * product.quantity}
-										</ProductPrice>
-									</PriceDetail>
+									<Column>
+										<ProductAmountContainer>
+											<div
+												onClick={() =>
+													onRemoveProduct(product)
+												}
+												style={{
+													cursor: 'pointer',
+													fontWeight: '500',
+												}}
+											>
+												Remove
+											</div>
+										</ProductAmountContainer>
+										<PriceDetail>
+											<ProductPrice>
+												${' '}
+												{product.price *
+													product.quantity}
+											</ProductPrice>
+										</PriceDetail>
+									</Column>
 								</Product>
 							))}
 						{/* <Hr /> */}

@@ -18,7 +18,7 @@ const Title = styled.h1`
 	font-size: 4.4rem;
 	margin: 1.2rem;
 
-	${mobile({ fontSize: '6rem' })}
+	${mobile({ fontSize: '8rem' })}
 `;
 
 const Desc = styled.div`
@@ -80,6 +80,10 @@ const Button = styled.button`
 	${mobile({ fontSize: '3rem', flex: '3' })}
 `;
 
+const Optimize = styled.div`
+	${mobile({ transform: '(2.5)' })}
+`;
+
 export default function Newsletter() {
 	const [email, setEmail] = React.useState('');
 
@@ -98,7 +102,9 @@ export default function Newsletter() {
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<Button onClick={handleClick}>
-					<Send />
+					<Optimize>
+						<Send />
+					</Optimize>
 				</Button>
 			</InputContainer>
 		</Container>

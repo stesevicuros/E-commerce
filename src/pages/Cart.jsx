@@ -17,6 +17,8 @@ const Container = styled.div``;
 
 const Wrapper = styled.div`
 	padding: 1.25rem;
+
+	${mobile({ padding: '0.625rem' })}
 `;
 
 const Title = styled.h1`
@@ -94,8 +96,6 @@ const Details = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-
-	${mobile({ fontSize: '3em' })}
 `;
 
 const ProductName = styled.span``;

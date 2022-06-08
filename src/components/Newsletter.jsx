@@ -52,7 +52,7 @@ const Input = styled.input`
 	${mobile({
 		fontSize: '3rem',
 		padding: '4rem 2rem',
-		flex: 6,
+		flex: '6',
 	})}
 
 	&::placeholder {

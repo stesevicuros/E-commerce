@@ -283,7 +283,7 @@ export default function Cart() {
 								<SummaryItemPrice>$ -5.90</SummaryItemPrice>
 							</SummaryItem>
 						)}
-						{totalPrice < 50
+						{totalPrice < 51
 							? (totalPrice = totalPrice + 5.9)
 							: null}
 						<SummaryItem type='total'>

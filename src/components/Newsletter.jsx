@@ -18,7 +18,7 @@ const Title = styled.h1`
 	font-size: 4.4rem;
 	margin: 1.2rem;
 
-	${mobile({ fontSize: '6em' })}
+	${mobile({ fontSize: '4.5rem' })}
 `;
 
 const Desc = styled.div`
@@ -51,7 +51,8 @@ const Input = styled.input`
 
 	${mobile({
 		fontSize: '3rem',
-		padding: '5rem 2.5rem',
+		padding: '4rem 22rem',
+		flex: 6,
 	})}
 
 	&::placeholder {
@@ -76,7 +77,7 @@ const Button = styled.button`
 	background-color: teal;
 	color: white;
 
-	${mobile({ fontSize: '3rem' })}
+	${mobile({ fontSize: '3rem', flex: '3' })}
 `;
 
 export default function Newsletter() {

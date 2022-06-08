@@ -85,7 +85,7 @@ const MenuItem = styled.div`
 	margin: 0 1.5rem;
 
 	${mobile({
-		fontSize: '0.7rem',
+		transform: 'scale(2.5)',
 		margin: '0 0.625rem',
 	})}
 `;
@@ -146,10 +146,7 @@ export default function Navbar() {
 								badgeContent={cart.products.length}
 								color='primary'
 							>
-								<ShoppingCartOutlined
-									color='action'
-									style={{ transform: 'scale(2.5)' }}
-								/>
+								<ShoppingCartOutlined color='action' />
 							</Badge>
 						</MenuItem>
 					</Link>

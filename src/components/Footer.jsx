@@ -48,8 +48,8 @@ const SocialIcon = styled.div`
 	margin-right: 1.25rem;
 
 	${mobile({
-		height: 'auto',
-		width: '50%',
+		height: 'fit-content',
+		width: '50vw',
 	})}
 `;
 
@@ -63,6 +63,8 @@ const Center = styled.div`
 const Title = styled.h3`
 	letter-spacing: 1.5px;
 	margin: 1.85rem 0 3.09rem;
+
+	${mobile({ fontSize: '2rem' })}
 `;
 
 const List = styled.ul`
@@ -89,6 +91,8 @@ const ContactItem = styled.div`
 	margin-bottom: 1.25rem;
 	display: flex;
 	align-items: center;
+
+	${mobile({ fontSize: '1.5rem' })}
 `;
 
 const Payment = styled.img`

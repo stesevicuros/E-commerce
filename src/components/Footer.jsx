@@ -136,27 +136,47 @@ export default function Footer() {
 				<List>
 					<Link
 						to='/'
-						style={{ textDecoration: 'none', color: 'black' }}
+						style={{
+							textDecoration: 'none',
+							color: 'black',
+							width: '50%',
+							marginBottom: '0.85rem',
+						}}
 					>
-						<ListItem>Home</ListItem>
+						Home
 					</Link>
 					<Link
 						to='/cart'
-						style={{ textDecoration: 'none', color: 'black' }}
+						style={{
+							textDecoration: 'none',
+							color: 'black',
+							width: '50%',
+							marginBottom: '0.85rem',
+						}}
 					>
-						<ListItem>Cart</ListItem>
+						Cart
 					</Link>
 					<Link
 						to='/products/Man'
-						style={{ textDecoration: 'none', color: 'black' }}
+						style={{
+							textDecoration: 'none',
+							color: 'black',
+							width: '50%',
+							marginBottom: '0.85rem',
+						}}
 					>
-						<ListItem>Man Fashion</ListItem>
+						Man Fashion
 					</Link>
 					<Link
 						to='/products/Women'
-						style={{ textDecoration: 'none', color: 'black' }}
+						style={{
+							textDecoration: 'none',
+							color: 'black',
+							width: '50%',
+							marginBottom: '0.85rem',
+						}}
 					>
-						<ListItem>Woman Fashion</ListItem>
+						Woman Fashion
 					</Link>
 
 					<ListItem>Accessories</ListItem>

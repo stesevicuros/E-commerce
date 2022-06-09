@@ -143,7 +143,10 @@ const ProductPrice = styled.div`
 `;
 
 const Column = styled.div`
-	${mobile({ display: 'flex', flexDirection: 'column' })}
+	display: flex;
+	flex-direction: row;
+
+	${mobile({ flexDirection: 'column' })}
 `;
 
 // const Hr = styled.hr`
